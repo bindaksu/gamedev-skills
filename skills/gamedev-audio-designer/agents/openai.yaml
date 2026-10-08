@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Audio Designer"
+  short_description: "SFX, adaptive music, FMOD/Wwise, mobile audio budgets, LUFS, interruptions"
+  default_prompt: "Our casual game's audio uses 120 MB and stops players' Spotify; set budgets, formats, loudness, and session handling."

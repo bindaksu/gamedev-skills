@@ -1,0 +1,4 @@
+interface:
+  display_name: "Meta Progression Designer"
+  short_description: "Collections, rosters, gear, renovation meta, unlock pacing, power curves"
+  default_prompt: "Pace the renovation areas and feature unlock schedule for my match-3 game so players always have a next step within one session."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Feel Designer"
+  short_description: "Juice, hit-stop, screen shake, easing, haptics, and input latency"
+  default_prompt: "Our melee hits feel weightless and taps feel laggy on low-end phones. Spec the feedback stack and timings."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analytics Engineer"
+  short_description: "Event taxonomy, KPI SQL, BigQuery/dbt pipeline, A/B stats, attribution, consent"
+  default_prompt: "Write a tracking plan and dbt models for our match-3 game so DAU, D7 retention and ARPDAU match across every dashboard."

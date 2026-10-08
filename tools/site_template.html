@@ -1,0 +1,444 @@
+<title>Game Studio Skill Pack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<style>
+/* Layout: a studio org sheet. Pack header + install, research on how top grossers staff games, then the roster grouped by discipline; any card opens the full SKILL.md in a reader. */
+:root {
+  --bg: #f2f3f7;
+  --surface: #ffffff;
+  --sunk: #e8eaf1;
+  --ink: #161a2b;
+  --muted: #5a6076;
+  --line: #d8dbe5;
+  --accent: #2f4bd8;
+  --accent-ink: #ffffff;
+  --warn: #b4531f;
+  --c-design: #c2410c;
+  --c-ux-ui: #7c3aed;
+  --c-art-audio: #be185d;
+  --c-growth-business: #047857;
+  --c-client-eng: #1d4ed8;
+  --c-backend: #0e7490;
+  --c-meta: #334155;
+  --c-narrative: #a16207;
+  --font-display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1120; --surface: #161a2c; --sunk: #1d2238; --ink: #e7e9f3; --muted: #9ba1b8; --line: #2a3048;
+    --accent: #8197ff; --accent-ink: #0e1120; --warn: #f0965f;
+    --c-design: #fb923c; --c-ux-ui: #b794f6; --c-art-audio: #f472b6; --c-growth-business: #34d399;
+    --c-client-eng: #7aa2ff; --c-backend: #22d3ee; --c-meta: #cbd5e1; --c-narrative: #facc15;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1120; --surface: #161a2c; --sunk: #1d2238; --ink: #e7e9f3; --muted: #9ba1b8; --line: #2a3048;
+  --accent: #8197ff; --accent-ink: #0e1120; --warn: #f0965f;
+  --c-design: #fb923c; --c-ux-ui: #b794f6; --c-art-audio: #f472b6; --c-growth-business: #34d399;
+  --c-client-eng: #7aa2ff; --c-backend: #22d3ee; --c-meta: #cbd5e1; --c-narrative: #facc15;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 32px 64px; display: grid; gap: 56px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.12; }
+h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.45rem, 3vw, 1.9rem); font-weight: 800; letter-spacing: -0.01em; }
+h3 { font-size: 1.05rem; font-weight: 600; }
+p { margin: 0; }
+a { color: var(--accent); }
+code, .mono { font-family: var(--font-mono); font-size: 0.86em; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.lede { color: var(--muted); max-width: 66ch; font-size: 1.05rem; }
+section { display: grid; gap: 20px; min-width: 0; }
+.sec-head { display: grid; gap: 8px; }
+
+/* Header */
+.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+.hero-copy { display: grid; gap: 14px; min-width: 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 8px 20px; font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.stats b { color: var(--ink); font-weight: 500; }
+.install { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 10px; min-width: 0; }
+.cmd { display: flex; align-items: center; gap: 8px; background: var(--sunk); border-radius: 6px; padding: 8px 10px; min-width: 0; }
+.cmd code { flex: 1; overflow-x: auto; white-space: nowrap; font-size: 0.8rem; }
+.cmd .lbl { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); width: 58px; flex: none; }
+button { font: inherit; cursor: pointer; }
+.copy { flex: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 5px; padding: 3px 9px; font-size: 0.75rem; font-family: var(--font-mono); }
+.copy:hover { border-color: var(--accent); color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Research */
+.research { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.span-7 { grid-column: span 7; } .span-5 { grid-column: span 5; } .span-4 { grid-column: span 4; } .span-6 { grid-column: span 6; } .span-12 { grid-column: span 12; }
+.tbl-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 0.86rem; font-variant-numeric: tabular-nums; }
+th { text-align: left; font-weight: 500; color: var(--muted); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+td { padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+td.num { text-align: right; font-family: var(--font-mono); font-size: 0.82rem; white-space: nowrap; }
+.genre { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); }
+.ladder { display: grid; gap: 10px; }
+.rung { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 12px; align-items: center; }
+.rung .size { font-family: var(--font-mono); font-size: 0.86rem; font-variant-numeric: tabular-nums; }
+.rung .bar { height: 10px; border-radius: 3px; background: var(--accent); }
+.rung p { font-size: 0.84rem; color: var(--muted); }
+.mix { display: flex; height: 26px; border-radius: 5px; overflow: hidden; }
+.mix span { display: flex; align-items: center; padding-inline: 8px; font-size: 0.72rem; font-family: var(--font-mono); color: var(--bg); white-space: nowrap; overflow: hidden; }
+.mix-legend { display: grid; gap: 4px; font-size: 0.84rem; }
+.mix-legend div { display: flex; justify-content: space-between; gap: 12px; }
+.mix-legend .v { font-family: var(--font-mono); color: var(--muted); }
+.note { font-size: 0.8rem; color: var(--muted); }
+.flag { color: var(--warn); font-weight: 600; }
+ul.tight { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 0.9rem; }
+.src { font-size: 0.76rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 12px; }
+
+/* Pipeline */
+.pipe { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; counter-reset: step; }
+.stage { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--c-meta); border-radius: 8px; padding: 12px; display: grid; gap: 6px; align-content: start; min-width: 0; cursor: pointer; text-align: left; color: var(--ink); }
+.stage:hover { border-color: var(--accent); }
+.stage .k { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); }
+.stage b { font-family: var(--font-display); font-size: 1rem; }
+.stage p { font-size: 0.8rem; color: var(--muted); }
+
+/* Catalog */
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.chip { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 4px 12px; font-size: 0.82rem; display: inline-flex; gap: 6px; align-items: center; }
+.chip .dot { width: 8px; height: 8px; border-radius: 50%; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.search { flex: 1 1 220px; min-width: 0; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 8px; padding: 7px 12px; font: inherit; font-size: 0.9rem; }
+.group { display: grid; gap: 12px; }
+.group-head { display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+.group-head .n { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--cat); border-radius: 8px; padding: 14px; display: grid; gap: 8px; align-content: start; text-align: left; color: var(--ink); min-width: 0; }
+.card:hover { border-color: var(--cat); }
+.card .nm { font-family: var(--font-mono); font-size: 0.76rem; color: var(--cat); word-break: break-all; }
+.card h3 { font-size: 1.05rem; }
+.card p { font-size: 0.86rem; color: var(--muted); }
+.card .meta { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.empty { color: var(--muted); padding: 24px 0; }
+
+/* Interpretations + install */
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+dl { margin: 0; display: grid; gap: 12px; }
+dt { font-weight: 600; }
+dd { margin: 2px 0 0; color: var(--muted); font-size: 0.9rem; }
+
+/* Reader */
+.reader { position: fixed; inset: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 860px); z-index: 10; }
+.reader .scrim { background: rgba(10, 12, 24, 0.45); }
+.reader .sheet { background: var(--bg); border-left: 1px solid var(--line); overflow-y: auto; padding-block: env(safe-area-inset-top, 0px) 48px; padding-inline: 24px; display: grid; gap: 16px; align-content: start; }
+.sheet-top { display: flex; gap: 10px; align-items: start; justify-content: space-between; position: sticky; top: 0; background: var(--bg); padding-block: 8px; border-bottom: 1px solid var(--line); z-index: 1; }
+.sheet-top .t { display: grid; gap: 4px; min-width: 0; }
+.sheet-actions { display: flex; gap: 6px; flex: none; }
+.desc { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; font-size: 0.88rem; display: grid; gap: 8px; }
+.links { display: flex; flex-wrap: wrap; gap: 6px; }
+.links button { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 2px 10px; font-family: var(--font-mono); font-size: 0.72rem; }
+.links button:hover { border-color: var(--accent); color: var(--accent); }
+.md { min-width: 0; font-size: 0.92rem; }
+.md h1 { font-size: 1.6rem; margin: 8px 0 12px; }
+.md h2 { font-size: 1.25rem; margin: 26px 0 10px; padding-top: 10px; border-top: 1px solid var(--line); }
+.md h3 { margin: 18px 0 8px; }
+.md p, .md ul, .md ol { margin: 0 0 10px; max-width: 78ch; }
+.md pre { background: var(--sunk); border-radius: 6px; padding: 12px; overflow-x: auto; font-size: 0.8rem; line-height: 1.45; }
+.md code { background: var(--sunk); padding: 1px 4px; border-radius: 3px; }
+.md pre code { background: none; padding: 0; }
+.md table { display: block; overflow-x: auto; margin: 0 0 12px; }
+.md td, .md th { border: 1px solid var(--line); }
+.md blockquote { margin: 0 0 10px; padding-left: 12px; border-left: 3px solid var(--line); color: var(--muted); }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .span-7, .span-5, .span-4, .span-6 { grid-column: span 12; }
+  .pipe { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .two { grid-template-columns: minmax(0, 1fr); }
+  .reader { grid-template-columns: 0 minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .wrap { padding-inline: 16px; }
+  .reader .sheet { padding-inline: 16px; }
+  .rung { grid-template-columns: 84px minmax(0, 1fr); }
+  .cmd .lbl { display: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .card, .stage, .chip { transition: border-color 120ms ease, background-color 120ms ease; }
+}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">Agent skills · Claude Code + Codex · v1.0.0</span>
+      <h1>Game Studio Skill Pack</h1>
+      <p class="lede">One skill per seat on a live-service game team, modeled on how top-grossing mobile studios hire. Specialists cover design, narrative, UX/UI, art and audio, growth and money, client and server engineering. Eight meta skills assess, brief, coordinate, manage, review, verify, deliver and serve.</p>
+      <div class="stats" id="stats"></div>
+    </div>
+    <div class="install" aria-label="Install">
+      <span class="eyebrow">Install from the pack folder</span>
+      <div class="cmd"><span class="lbl">both</span><code>./install.sh</code><button class="copy" data-copy="./install.sh">Copy</button></div>
+      <div class="cmd"><span class="lbl">claude</span><code>./install.sh --claude</code><button class="copy" data-copy="./install.sh --claude">Copy</button></div>
+      <div class="cmd"><span class="lbl">codex</span><code>./install.sh --codex</code><button class="copy" data-copy="./install.sh --codex">Copy</button></div>
+      <div class="cmd"><span class="lbl">project</span><code>./install.sh --project ~/code/my-game</code><button class="copy" data-copy="./install.sh --project ~/code/my-game">Copy</button></div>
+      <p class="note">Claude Code reads <code>~/.claude/skills</code>. Codex reads <code>~/.codex/skills</code> (or <code>$CODEX_HOME/skills</code>), and <code>.agents/skills</code> inside a repo. Same SKILL.md for both; <code>agents/openai.yaml</code> adds Codex display metadata.</p>
+    </div>
+  </header>
+
+  <section id="research">
+    <div class="sec-head">
+      <span class="eyebrow">Research · how top grossers staff a game</span>
+      <h2>Who builds the games that top the charts</h2>
+      <p class="lede">From public job postings, careers pages, engineering blogs, filings and trade press for 18 publishers. LinkedIn profiles were not scraped; postings stand in for team member profiles and are tagged as proxy in the source notes shipped in <code>docs/</code>.</p>
+    </div>
+    <div class="research">
+      <div class="panel span-7">
+        <h3>2025 top-grossing mobile games</h3>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Game</th><th>Publisher</th><th style="text-align:right">2025 net IAP</th></tr></thead>
+            <tbody>
+              <tr><td>Honor of Kings <div class="genre">MOBA</div></td><td>Tencent</td><td class="num">$1.68bn</td></tr>
+              <tr><td>Last War <div class="genre">4X / SLG</div></td><td>FirstFun</td><td class="num">$1.57bn</td></tr>
+              <tr><td>Whiteout Survival <div class="genre">4X / SLG</div></td><td>Century Games</td><td class="num">$1.4bn+</td></tr>
+              <tr><td>Royal Match <div class="genre">Match-3</div></td><td>Dream Games</td><td class="num">$1.37bn</td></tr>
+              <tr><td>Monopoly GO <div class="genre">Casual board, IAP only</div></td><td>Scopely</td><td class="num">$1.36bn</td></tr>
+              <tr><td>Candy Crush Saga <div class="genre">Match-3</div></td><td>King</td><td class="num">&gt;$1bn</td></tr>
+              <tr><td>Coin Master <div class="genre">Casual social</div></td><td>Moon Active</td><td class="num">~$650m</td></tr>
+              <tr><td>Kingshot <div class="genre">4X, launched Feb 2025</div></td><td>Century Games</td><td class="num">~$449m</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">AppMagic, net of store cut, excludes ads and webshops (so Monopoly GO and FunPlus-style webshop revenue are understated). <a href="https://mobilegamer.biz/the-top-grossing-mobile-games-of-2025/" target="_blank" rel="noopener">mobilegamer.biz</a></p>
+      </div>
+      <div class="panel span-5">
+        <h3>Team size follows lifecycle stage</h3>
+        <div class="ladder">
+          <div class="rung"><span class="size">5–10</span><div><div class="bar" style="width:4%"></div><p>Discovery cell. Supercell cells and Spark teams average ~6.</p></div></div>
+          <div class="rung"><span class="size">20–50</span><div><div class="bar" style="width:10%"></div><p>Live casual or midcore. Supercell live teams 20–35; Brawl Stars grew 20 → 45+.</p></div></div>
+          <div class="rung"><span class="size">100–150+</span><div><div class="bar" style="width:24%"></div><p>Mass-market hit. Gardenscapes, Monopoly GO, Arena of Valor.</p></div></div>
+          <div class="rung"><span class="size">~700</span><div><div class="bar" style="width:100%"></div><p>Content-heavy gacha. Genshin Impact (2021).</p></div></div>
+        </div>
+        <div class="src">
+          <a href="https://www.pocketgamer.biz/news/83626/supercell-reveal-spark-applying-science-and-psychology-to-build-better-teams-and-games/" target="_blank" rel="noopener">Spark</a>
+          <a href="https://supercell.com/en/news/best-days/7600/" target="_blank" rel="noopener">Supercell</a>
+          <a href="https://mobilegamer.biz/why-supercell-doubled-the-brawl-stars-team-and-continues-to-evolve-its-culture/" target="_blank" rel="noopener">Brawl Stars</a>
+          <a href="https://www.articy.com/en/showcase/gardenscapes/" target="_blank" rel="noopener">Gardenscapes</a>
+          <a href="https://unity3d.com/case-study/arena-valor" target="_blank" rel="noopener">Arena of Valor</a>
+        </div>
+      </div>
+      <div class="panel span-4">
+        <h3>Live team discipline mix</h3>
+        <div class="mix" role="img" aria-label="Engineering 35, art 30, design 17, product data QA community 13 percent">
+          <span style="width:36.8%;background:var(--c-client-eng)">Eng</span>
+          <span style="width:31.6%;background:var(--c-art-audio)">Art</span>
+          <span style="width:18.4%;background:var(--c-design)">Design</span>
+          <span style="width:13.2%;background:var(--c-meta)">Ops</span>
+        </div>
+        <div class="mix-legend">
+          <div><span>Engineering: client, server, tools</span><span class="v">30–40%</span></div>
+          <div><span>Art and technical art</span><span class="v">25–35%</span></div>
+          <div><span>Design: game, level, economy, live-ops</span><span class="v">15–20%</span></div>
+          <div><span>Product, data, QA, community</span><span class="v">10–15%</span></div>
+        </div>
+        <p class="note"><span class="flag">Inferred.</span> No studio publishes a ratio; estimated from team sizes and postings. UA and creative usually sit centrally.</p>
+      </div>
+      <div class="panel span-4">
+        <h3>Org patterns that repeat</h3>
+        <ul class="tight">
+          <li><b>Shared platform, autonomous game teams.</b> Scopely Playgami, Playtika Boost, Playrix LiveOps Platform, King Shared Tech, Tencent Level Infinite.</li>
+          <li><b>A GM owns the game</b>, not a director chain. Lilith makes each game a subsidiary with 20% team equity.</li>
+          <li><b>Kill early, soft launch long.</b> Supercell: 30+ kills vs 5 hits. Royal Kingdom: 19 months in soft launch.</li>
+          <li><b>Reskin proven loops.</b> Kingshot from Whiteout; Royal Match from Toon Blast lineage.</li>
+        </ul>
+      </div>
+      <div class="panel span-4">
+        <h3>What the postings ask for</h3>
+        <ul class="tight">
+          <li><b>A/B testing</b> is the most common skill across disciplines.</li>
+          <li><b>Backend is Java</b> at Supercell and King; Go/Node accepted; infra leans GCP, K8s, Terraform, BigQuery.</li>
+          <li><b>Native iOS/Android game roles are rare.</b> Native work is C++ with Metal or Vulkan, plus platform SDK layers.</li>
+          <li><b>AI tooling is now required</b> at Supercell, Playtika and Playrix. King cut ~200 jobs in 2025, including level design, UX and copy.</li>
+        </ul>
+      </div>
+      <div class="panel span-12">
+        <h3>Revenue per head spans about 5×</h3>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Studio</th><th>Staff</th><th>Revenue basis</th><th style="text-align:right">Per head</th></tr></thead>
+            <tbody>
+              <tr><td>Dream Games</td><td class="num" style="text-align:left">~300</td><td>~$1.6bn+ AppMagic net, 2 games</td><td class="num">~$5m</td></tr>
+              <tr><td>Supercell</td><td class="num" style="text-align:left">890</td><td>€2.65bn reported</td><td class="num">~€3m</td></tr>
+              <tr><td>Playtika</td><td class="num" style="text-align:left">~3,500</td><td>~$2.76bn reported</td><td class="num">~$0.8m</td></tr>
+              <tr><td>Moon Active</td><td class="num" style="text-align:left">~2,200–2,500</td><td>&gt;$2bn (2024)</td><td class="num">~$0.9m</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Mixed bases (reported vs estimated). Lean builders (Supercell, Dream Games) vs federated M&amp;A operators (Scopely, Playtika, Moon Active, Century). Full notes with ~100 source links ship as <code>docs/companies.md</code>, <code>docs/roles.md</code>, <code>docs/tech.md</code>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="flow">
+    <div class="sec-head">
+      <span class="eyebrow">Orchestration layer</span>
+      <h2>How the meta skills run a feature</h2>
+      <p class="lede">The assessment manager scores the game as a numbered edition and ranks top moves. The brief coordinator turns those moves, or any short ask, into a paste-ready agent prompt. The coordinator routes the work to specialists; it then moves through review, verification, delivery and live serving while the producer owns scope and stage gates.</p>
+    </div>
+    <div class="pipe" id="pipe"></div>
+  </section>
+
+  <section id="catalog">
+    <div class="sec-head">
+      <span class="eyebrow">Roster</span>
+      <h2>Every skill in the pack</h2>
+    </div>
+    <div class="toolbar">
+      <input class="search" id="q" type="search" placeholder="Search skills, e.g. matchmaking, StoreKit, battle pass" aria-label="Search skills">
+      <div id="chips" class="toolbar"></div>
+    </div>
+    <div id="groups" class="group" style="gap:32px"></div>
+  </section>
+
+  <section id="notes">
+    <div class="two">
+      <div class="panel">
+        <h3>How ambiguous asks were read</h3>
+        <dl>
+          <dt>Layout design</dt><dd>Level, map and puzzle-board layout in <code>gamedev-level-layout-designer</code>. Screen layout grids live in <code>gamedev-ui-designer</code>.</dd>
+          <dt>Campaign design</dt><dd>Story and mission campaigns in <code>gamedev-campaign-designer</code>. LiveOps event campaigns are owned by <code>gamedev-liveops-designer</code>.</dd>
+          <dt>Serving expert</dt><dd>Live-service runtime and content serving (SLOs, incidents, CDN hot updates, kill switches) in <code>gamedev-live-serving</code>. The build-and-ship pipeline is <code>gamedev-delivery-release</code>.</dd>
+          <dt>Growth vs financial growth</dt><dd>Player retention mechanics in <code>gamedev-growth-designer</code>. UA, LTV, ROAS, payback and P&amp;L in <code>gamedev-financial-growth-strategist</code>.</dd>
+        </dl>
+      </div>
+      <div class="panel">
+        <h3>Using the pack</h3>
+        <ul class="tight">
+          <li>Start broad requests with <code>gamedev-coordinator</code>; score a whole game with <code>gamedev-assessment-manager</code>; turn any ask into an agent prompt with <code>gamedev-brief-coordinator</code>.</li>
+          <li>Skills trigger on their own from the description, or call one by name in Claude Code (<code>/gamedev-pvp-designer</code>) or Codex (<code>$gamedev-pvp-designer</code>).</li>
+          <li>Six companion skills you already have (<code>core-loop-designer</code>, <code>game-economy-balancer</code>, <code>game-playtest-analyst</code>, <code>game-prototype-planner</code>, <code>game-asset-art-director</code>, <code>mobile-game-ux-designer</code>) are linked, never duplicated.</li>
+          <li>Install a subset to keep session prompts lean: <code>./install.sh --only gamedev-coordinator,gamedev-unity-engineer</code>.</li>
+          <li>Facts that change (store deadlines, SDK versions) are tagged “as of 2026-10; verify”.</li>
+          <li>Remove with <code>./install.sh --uninstall</code>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="reader" id="reader" hidden>
+  <div class="scrim" id="scrim"></div>
+  <article class="sheet" id="sheet" aria-modal="true" role="dialog" aria-labelledby="r-title"></article>
+</div>
+
+<script>
+const SKILLS = /*__DATA__*/[];
+const CATS = [
+  ["meta", "Orchestration", "Assess, brief, coordinate, manage, review, verify, deliver, serve"],
+  ["design", "Game & narrative design", "Story, script, campaign, levels, combat, PvP, systems, live ops, feel"],
+  ["ux-ui", "UX, UI & HUD", "Screens, flows, HUD, accessibility, localization"],
+  ["art-audio", "Art & audio", "Technical art and sound"],
+  ["growth-business", "Growth, money & data", "Retention, monetization, finance, analytics"],
+  ["client-eng", "Client engineering", "iOS, Metal, Android, Unity, desktop, engine, netcode, performance"],
+  ["backend", "Platform & backend", "Server architecture, services, infrastructure, security"],
+];
+const catOf = k => CATS.find(c => c[0] === k) || [k, k, ""];
+const byName = Object.fromEntries(SKILLS.map(s => [s.name, s]));
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+const totalLines = SKILLS.reduce((a, s) => a + s.lines + s.refLines, 0);
+document.getElementById("stats").innerHTML =
+  `<span><b>${SKILLS.length}</b> skills</span><span><b>${SKILLS.filter(s => s.category !== "meta").length}</b> specialists</span>` +
+  `<span><b>${SKILLS.filter(s => s.category === "meta").length}</b> meta</span><span><b>${SKILLS.reduce((a, s) => a + s.refs.length, 0)}</b> reference files</span>` +
+  `<span><b>${totalLines.toLocaleString()}</b> lines of guidance</span>`;
+
+const PIPE = [
+  ["gamedev-assessment-manager", "Assess", "Scored edition: 10 dimensions, deltas, top moves"],
+  ["gamedev-brief-coordinator", "Brief", "Short ask or top moves into a paste-ready agent prompt"],
+  ["gamedev-coordinator", "Route", "Splits the ask, picks specialists, writes handoff contracts"],
+  ["gamedev-producer", "Manage", "Stage gates, scope cut lines, roadmap, risk"],
+  ["gamedev-reviewer", "Review", "Severity-ranked findings across docs and code"],
+  ["gamedev-qa-verifier", "Verify", "Device matrix, regression, store compliance, evidence"],
+  ["gamedev-delivery-release", "Deliver", "CI/CD, signing, phased rollout, hotfix paths"],
+  ["gamedev-live-serving", "Serve", "SLOs, incidents, event-day scale, hot content"],
+];
+document.getElementById("pipe").innerHTML = PIPE.map(([n, k, d], i) => {
+  const s = byName[n];
+  return `<button class="stage" data-open="${n}"><span class="k">${i + 1} · ${k}</span><b>${esc(s ? s.title : n)}</b><p>${esc(d)}</p></button>`;
+}).join("");
+
+let active = "all";
+let pref = null;
+try { pref = localStorage.getItem("gsp-cat"); } catch (e) {}
+if (pref && (pref === "all" || CATS.some(c => c[0] === pref))) active = pref;
+
+function renderChips() {
+  const all = [["all", "All", ""]].concat(CATS);
+  document.getElementById("chips").innerHTML = all.map(([k, label]) =>
+    `<button class="chip" data-cat="${k}" aria-pressed="${active === k}">${k === "all" ? "" : `<span class="dot" style="background:var(--c-${k})"></span>`}${esc(label)}</button>`
+  ).join("");
+}
+
+function renderGroups() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const match = s => !q || (s.name + " " + s.title + " " + s.description + " " + s.short).toLowerCase().includes(q);
+  const html = CATS.filter(c => active === "all" || c[0] === active).map(([k, label, blurb]) => {
+    const items = SKILLS.filter(s => s.category === k && match(s));
+    if (!items.length) return "";
+    return `<div class="group"><div class="group-head"><h3>${esc(label)}</h3><span class="n">${items.length} · ${esc(blurb)}</span></div>
+      <div class="grid">${items.map(s => `<button class="card" style="--cat:var(--c-${k})" data-open="${s.name}">
+        <span class="nm">${s.name}</span><h3>${esc(s.title)}</h3><p>${esc(s.short)}</p>
+        <span class="meta">${s.lines} lines · ${s.refs.length} refs${s.related.length ? ` · links ${s.related.length}` : ""}</span></button>`).join("")}</div></div>`;
+  }).join("");
+  document.getElementById("groups").innerHTML = html || `<p class="empty">No skill matches “${esc(q)}”. Try a discipline word like “combat” or a platform like “Android”.</p>`;
+}
+
+function openSkill(name) {
+  const s = byName[name];
+  if (!s) return;
+  const body = window.marked ? marked.parse(s.body) : `<pre>${esc(s.body)}</pre>`;
+  const sheet = document.getElementById("sheet");
+  sheet.innerHTML = `<div class="sheet-top"><div class="t"><span class="nm mono" style="color:var(--c-${s.category})">${s.name}</span><h2 id="r-title">${esc(s.title)}</h2></div>
+    <div class="sheet-actions"><button class="copy" data-copy-skill="${s.name}">Copy SKILL.md</button><button class="copy" id="close">Close</button></div></div>
+    <div class="desc"><span class="eyebrow">Trigger description</span><p>${esc(s.description)}</p>
+      <span class="eyebrow">Example prompt</span><p class="mono">${esc(s.prompt)}</p>
+      ${s.refs.length ? `<span class="eyebrow">Reference files</span><p class="mono">${s.refs.map(esc).join(" · ")}</p>` : ""}
+      ${s.related.length ? `<span class="eyebrow">Hands off to</span><div class="links">${s.related.filter(r => byName[r]).map(r => `<button data-open="${r}">${r}</button>`).join("")}</div>` : ""}
+    </div><div class="md">${body}</div>`;
+  document.getElementById("reader").hidden = false;
+  sheet.scrollTop = 0;
+  document.getElementById("close").focus();
+}
+function closeReader() { document.getElementById("reader").hidden = true; }
+
+function rawSkill(s) { return s.raw; }
+
+async function copyText(btn, text) {
+  try { await navigator.clipboard.writeText(text); btn.textContent = "Copied"; }
+  catch (e) { btn.textContent = "Select manually"; }
+  setTimeout(() => { btn.textContent = btn.dataset.copySkill ? "Copy SKILL.md" : "Copy"; }, 1600);
+}
+
+document.addEventListener("click", e => {
+  const t = e.target.closest("button, #scrim");
+  if (!t) return;
+  if (t.id === "scrim" || t.id === "close") return closeReader();
+  if (t.dataset.open) return openSkill(t.dataset.open);
+  if (t.dataset.cat) {
+    active = t.dataset.cat;
+    try { localStorage.setItem("gsp-cat", active); } catch (err) {}
+    renderChips(); renderGroups(); return;
+  }
+  if (t.dataset.copy) return copyText(t, t.dataset.copy);
+  if (t.dataset.copySkill) return copyText(t, rawSkill(byName[t.dataset.copySkill]));
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeReader(); });
+document.getElementById("q").addEventListener("input", renderGroups);
+renderChips();
+renderGroups();
+const hash = location.hash.slice(1);
+if (byName[hash]) openSkill(hash);
+</script>

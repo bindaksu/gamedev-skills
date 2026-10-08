@@ -1,0 +1,4 @@
+interface:
+  display_name: "Narrative Designer"
+  short_description: "Premise, world, characters, arcs, and story-in-meta for F2P and live games"
+  default_prompt: "Design the story arc for our next renovation area: 18 tasks, a twist, and a hook into the next area."

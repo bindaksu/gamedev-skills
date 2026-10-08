@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Live Serving"
+  short_description: "Game SLOs, incidents, event-day scaling, CDN content, kill switches"
+  default_prompt: "Plan capacity, kill switches and an incident runbook for our season reset next week; we expect 2x normal peak."

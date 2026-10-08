@@ -1,0 +1,4 @@
+interface:
+  display_name: "Desktop Game Engineer"
+  short_description: "Steam/PC/Mac: Steamworks, Deck Verified, input, display, notarization, stores"
+  default_prompt: "Plan the Steam and Mac port of our mobile Unity game, including Deck Verified and notarization."

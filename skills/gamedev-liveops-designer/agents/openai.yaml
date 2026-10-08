@@ -1,0 +1,4 @@
+interface:
+  display_name: "LiveOps Designer"
+  short_description: "Event calendars, battle pass math, event templates and LiveOps pipelines"
+  default_prompt: "Plan an 8-week event calendar and a 30-day battle pass for our match-3 game so the median player finishes."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Level Layout Designer"
+  short_description: "Match-3 boards, move budgets, win-rate curves, and spatial map layout"
+  default_prompt: "Level 147 has a 31% win rate and double the churn of its band. Diagnose it and retune the move budget."

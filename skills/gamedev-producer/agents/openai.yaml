@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Producer"
+  short_description: "Stage gates, kill criteria, roadmaps, risk, scope cuts, live cadence"
+  default_prompt: "Write the soft-launch stage plan for our match-3 game with kill criteria, team size and a risk register."

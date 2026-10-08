@@ -1,0 +1,4 @@
+interface:
+  display_name: "Simulation Designer"
+  short_description: "Idle math, offline progress, production chains, agent sims, determinism"
+  default_prompt: "Design the offline-progress and bulk-buy math for my idle mining game so numbers can pass 1e308 without breaking."

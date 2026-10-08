@@ -1,0 +1,4 @@
+interface:
+  display_name: "Combat Designer"
+  short_description: "TTK, DPS and EHP math, frame data, abilities, enemy archetypes, unit balance"
+  default_prompt: "Our chapter 5 elite takes 27 seconds to kill on mobile and players flee it; rebalance its HP, armor and telegraphs."

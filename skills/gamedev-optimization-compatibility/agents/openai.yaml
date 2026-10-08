@@ -1,0 +1,4 @@
+interface:
+  display_name: "Optimization & Compatibility"
+  short_description: "Per-tier perf budgets, device matrix, thermals, memory, vitals, app size"
+  default_prompt: "Our game drops from 60 to 40 fps after 15 minutes on mid-range phones and OOM kills are rising; set tier budgets and a fix plan."

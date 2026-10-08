@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Localization Specialist"
+  short_description: "String pipeline, ICU plurals, CJK/RTL fonts, LQA, culturalization, store loc"
+  default_prompt: "Plan adding German, Japanese, and Arabic to my Unity puzzle game: i18n audit, fonts, RTL, and LQA."

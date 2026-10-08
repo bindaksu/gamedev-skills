@@ -1,0 +1,4 @@
+interface:
+  display_name: "Financial Growth Strategist"
+  short_description: "LTV/ROAS models, UA scaling, soft-launch gates, P&L, forecasts, measurement"
+  default_prompt: "Our puzzle game has D1 40%, D7 18%, CPI $3.50 and $0.30 ARPDAU — what's payback, and how far can we scale UA?"

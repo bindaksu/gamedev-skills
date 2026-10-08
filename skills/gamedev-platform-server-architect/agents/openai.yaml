@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Platform & Server Architect"
+  short_description: "Service map, build vs buy, consistency, sharding and scale for game backends"
+  default_prompt: "Design the backend for our async mobile puzzle game at 2M DAU and tell me what to build vs buy."

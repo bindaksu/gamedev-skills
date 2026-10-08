@@ -1,0 +1,4 @@
+interface:
+  display_name: "Growth Designer"
+  short_description: "Retention levers, habit loops, streaks, viral loops, notifications, win-back"
+  default_prompt: "Our puzzle game has 42% D1 but only 12% D7 — map the leaking horizon and give me a retention experiment backlog."

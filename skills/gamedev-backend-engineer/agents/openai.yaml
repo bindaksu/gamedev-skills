@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Backend Engineer"
+  short_description: "Idempotent economy ledger, receipt validation, refunds, leaderboards, mail"
+  default_prompt: "Implement an idempotent purchase verification endpoint for App Store and Google Play that grants gems through our ledger and handles refunds."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game UI Designer"
+  short_description: "Game screen grids, tokens, 9-slice, icons, type, shop UI, engine handoff"
+  default_prompt: "Design the shop screen for my portrait puzzle game so it works on iPhone and iPad, with a token set and a Unity handoff spec."

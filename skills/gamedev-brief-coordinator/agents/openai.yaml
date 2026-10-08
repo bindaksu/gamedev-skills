@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brief Coordinator"
+  short_description: "Turn a short game request into a tight, paste-ready agent brief"
+  default_prompt: "Turn this into a brief for Codex: fix the 14 playtest notes in feedback.txt for our card game."

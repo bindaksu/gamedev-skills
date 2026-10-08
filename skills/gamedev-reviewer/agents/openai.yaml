@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Dev Reviewer"
+  short_description: "Severity-ranked review of game docs, economy, UX, client/server code"
+  default_prompt: "Review this guild war reward service PR and the offer config change; rank findings by severity."

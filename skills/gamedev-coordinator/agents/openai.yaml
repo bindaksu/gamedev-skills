@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Dev Coordinator"
+  short_description: "Decompose game features, route to specialist skills, set RACI"
+  default_prompt: "Break down adding a guild war mode to our puzzle RPG and tell me which specialists own each piece."

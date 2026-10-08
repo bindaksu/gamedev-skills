@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Technical Artist"
+  short_description: "Shader and VFX budgets, ASTC/ETC2, atlasing, batching, skinning, asset checks"
+  default_prompt: "Our level-complete VFX drops to 20 fps on low-end Android; find the cost and set shader, VFX, and texture budgets."

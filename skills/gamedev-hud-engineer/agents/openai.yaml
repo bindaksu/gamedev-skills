@@ -1,0 +1,4 @@
+interface:
+  display_name: "HUD Engineer"
+  short_description: "Game HUD hierarchy, combat text, safe areas, and HUD performance"
+  default_prompt: "Our combat HUD stutters in boss fights and gets clipped by the notch on some phones; redesign the hierarchy and fix the canvas setup."

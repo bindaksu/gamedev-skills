@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Infrastructure Engineer"
+  short_description: "Kubernetes, Agones fleets, regions, autoscaling, databases, CDN, cost and DR"
+  default_prompt: "Write Agones Fleet and FleetAutoscaler manifests and a GKE Terraform setup for our 3-region PvP launch with a weekend event spike."

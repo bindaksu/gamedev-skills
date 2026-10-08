@@ -1,0 +1,4 @@
+interface:
+  display_name: "Netcode Engineer"
+  short_description: "Multiplayer sync models, prediction, rollback, tick rates, mobile networks"
+  default_prompt: "Pick the netcode model for our 3v3 mobile brawler and fix the rubber-banding players see on 4G."

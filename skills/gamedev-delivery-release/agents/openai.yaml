@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Delivery and Release"
+  short_description: "Game CI/CD, signing, store rollout, hotfix vs config fix, force update"
+  default_prompt: "Set up a release pipeline and rollout plan for our Unity game on iOS and Android, including hotfix and force-update policy."

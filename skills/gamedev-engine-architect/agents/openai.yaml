@@ -1,0 +1,4 @@
+interface:
+  display_name: "Engine Architect"
+  short_description: "Game loop, fixed timestep, ECS, determinism, saves, scripting, engine choice"
+  default_prompt: "Design the game loop, deterministic simulation and save-migration scheme for our mobile tactics game, and tell me whether Unity, Godot or a custom engine fits."

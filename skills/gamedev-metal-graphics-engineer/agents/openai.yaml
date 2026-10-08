@@ -1,0 +1,4 @@
+interface:
+  display_name: "Metal Graphics Engineer"
+  short_description: "Metal 3/4 renderers, MSL, MetalFX, TBDR bandwidth, GPU profiling, GPTK ports"
+  default_prompt: "My iPhone game drops from 60 to 40 fps after ten minutes; review this Metal pass setup and GPU capture."

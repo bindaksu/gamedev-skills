@@ -1,0 +1,4 @@
+interface:
+  display_name: "PvP Designer"
+  short_description: "Matchmaking, Elo/Glicko-2/TrueSkill, ranked seasons, async PvP, P2W, bots"
+  default_prompt: "Our top-tier ranked players wait 6 minutes at night and get stomps; redesign the matchmaker, ladder and season reset."

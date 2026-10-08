@@ -1,0 +1,4 @@
+interface:
+  display_name: "Unity Engineer"
+  short_description: "Unity 6 mobile client architecture, Addressables, URP, IL2CPP, GC, plugins"
+  default_prompt: "Our Unity 6 game hitches every few seconds on mid-range Android and content updates never reach players; audit the project and fix it."

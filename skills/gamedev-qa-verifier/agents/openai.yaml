@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game QA Verifier"
+  short_description: "Game test plans, device matrix, automation, IAP tests, store cert"
+  default_prompt: "Build a test plan and device matrix for our Unity match-3 1.14 release, including IAP and store compliance checks."

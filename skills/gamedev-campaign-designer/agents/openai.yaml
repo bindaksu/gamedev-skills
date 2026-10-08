@@ -1,0 +1,4 @@
+interface:
+  display_name: "Campaign Designer"
+  short_description: "Chapters, mission order, difficulty and interest curves, boss gates"
+  default_prompt: "Plan chapter 2 of our mobile campaign: 10 missions, mechanic intro order, tension curve, and a boss gate."

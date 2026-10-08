@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assessment Manager"
+  short_description: "Scored, evidence-backed game assessment editions with deltas and top moves"
+  default_prompt: "Run the next assessment edition of this game on the current build and update the published page."

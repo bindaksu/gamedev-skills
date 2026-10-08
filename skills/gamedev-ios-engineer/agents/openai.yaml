@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS Game Engineer"
+  short_description: "Swift games on Apple platforms: loop, StoreKit 2, Game Center, thermals, review"
+  default_prompt: "Audit my SpriteKit game's update loop and StoreKit purchase flow before App Review."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Script Writer"
+  short_description: "Dialogue, barks, VO scripts, UI copy, and Ink/Yarn branching, loc-ready"
+  default_prompt: "Write an 8-line low-health bark pool for our squad shooter with IDs, cooldowns, and loc notes."

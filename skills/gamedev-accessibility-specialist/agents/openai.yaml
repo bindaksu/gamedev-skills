@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Accessibility Specialist"
+  short_description: "GAG/XAG audits, subtitles, colorblind, remapping, screen readers, CVAA/EAA"
+  default_prompt: "Audit my mobile RPG for accessibility and spec subtitles, colorblind mode, and remapping before our PC launch."
