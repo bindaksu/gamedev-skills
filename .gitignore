@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.zip
+.gstack/
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.mobileprovision
+.claude/settings.local.json
+banlist.txt

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Android Game Engineer"
+  short_description: "Android games: NDK, Vulkan, ADPF, Play Billing, Play policy"
+  default_prompt: "$gamedev-android-engineer Audit our Android build for target API 36, 16 KB pages, Play Billing 8, and thermal jank."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game UI Designer"
+  short_description: "Game screen grids, tokens, icons, type, shop UI, handoff"
+  default_prompt: "$gamedev-ui-designer Design the shop screen for my portrait puzzle game so it works on iPhone and iPad, with a token set and a Unity handoff spec."

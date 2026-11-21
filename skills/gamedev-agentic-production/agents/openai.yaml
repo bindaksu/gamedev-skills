@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agentic Production"
+  short_description: "Run a game build across many coding-agent sessions"
+  default_prompt: "$gamedev-agentic-production Set up AGENTS.md, ledgers, host locks and model routing so four coding agents can build our game on one Mac."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Netcode Engineer"
+  short_description: "Sync models, prediction, rollback, tick rates, mobile nets"
+  default_prompt: "$gamedev-netcode-engineer Pick the netcode model for our 3v3 mobile brawler and fix the rubber-banding players see on 4G."

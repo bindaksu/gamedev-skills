@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Audio Designer"
+  short_description: "SFX, adaptive music, middleware, audio budgets, loudness"
+  default_prompt: "$gamedev-audio-designer Our casual game's audio uses 120 MB and stops players' Spotify; set budgets, formats, loudness, and session handling."

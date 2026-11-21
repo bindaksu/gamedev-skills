@@ -1,0 +1,4 @@
+interface:
+  display_name: "PvP Designer"
+  short_description: "Matchmaking, rating systems, ranked seasons, async PvP"
+  default_prompt: "$gamedev-pvp-designer Our top-tier ranked players wait 6 minutes at night and get stomps; redesign the matchmaker, ladder and season reset."

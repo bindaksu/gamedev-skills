@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analytics Engineer"
+  short_description: "Event taxonomy, KPI SQL, pipelines, A/B stats, attribution"
+  default_prompt: "$gamedev-analytics-engineer Write a tracking plan and dbt models for our match-3 game so DAU, D7 retention and ARPDAU match across every dashboard."

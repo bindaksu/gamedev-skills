@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assessment Manager"
+  short_description: "Scored, evidence-backed game assessments with deltas"
+  default_prompt: "$gamedev-assessment-manager Run the next assessment edition of this game on the current build and update the published page."

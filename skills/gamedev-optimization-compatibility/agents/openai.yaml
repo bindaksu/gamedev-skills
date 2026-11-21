@@ -1,0 +1,4 @@
+interface:
+  display_name: "Optimization & Compatibility"
+  short_description: "Tier budgets, device matrix, thermals, memory, app size"
+  default_prompt: "$gamedev-optimization-compatibility Our game drops from 60 to 40 fps after 15 minutes on mid-range phones and OOM kills are rising; set tier budgets and a fix plan."

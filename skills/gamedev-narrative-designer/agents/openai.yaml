@@ -1,0 +1,4 @@
+interface:
+  display_name: "Narrative Designer"
+  short_description: "Premise, world, characters, arcs and story-in-meta"
+  default_prompt: "$gamedev-narrative-designer Design the story arc for our next renovation area: 18 tasks, a twist, and a hook into the next area."

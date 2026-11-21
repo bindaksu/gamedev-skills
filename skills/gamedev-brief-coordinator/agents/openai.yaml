@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brief Coordinator"
+  short_description: "Turn a short game request into a paste-ready agent brief"
+  default_prompt: "$gamedev-brief-coordinator Cut this long QA prompt down to a paste-ready brief: fix the playtest notes in notes.md for our roguelite."

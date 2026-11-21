@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game LLM Features Engineer"
+  short_description: "Safe, costed LLM NPCs, companions, advisors and voice chat"
+  default_prompt: "$gamedev-llm-features-engineer Design our voice NPC: authority contract, safety pipeline, latency budget and cost per session."

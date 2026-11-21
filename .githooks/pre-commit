@@ -1,0 +1,11 @@
+#!/bin/sh
+# Blocks commits that leak secrets or private project details, or break the pack.
+# Enable once per clone: git config core.hooksPath .githooks
+set -e
+cd "$(git rev-parse --show-toplevel)"
+python3 tools/leak_guard.py --staged
+if python3 -c "import yaml" 2>/dev/null; then
+  out=$(python3 tools/validate.py --all skills) || { echo "$out"; exit 1; }
+else
+  echo "pre-commit: PyYAML missing, skipped validate.py (pip install pyyaml)" >&2
+fi

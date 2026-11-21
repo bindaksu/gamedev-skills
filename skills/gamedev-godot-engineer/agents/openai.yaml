@@ -1,0 +1,4 @@
+interface:
+  display_name: "Godot Engineer"
+  short_description: "Godot 4 exports, native plugins, GodotSteam, CI gates"
+  default_prompt: "$gamedev-godot-engineer Our Godot 4 game plays sound and loads every asset in the editor, but the iOS and Steam exports are broken; audit the export presets, native plugins and release gates."

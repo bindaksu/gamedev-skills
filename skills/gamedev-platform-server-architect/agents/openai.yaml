@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Platform & Server Architect"
+  short_description: "Game backend service map, build vs buy, scale"
+  default_prompt: "$gamedev-platform-server-architect Design the backend for our async mobile puzzle game at 2M DAU and tell me what to build vs buy."

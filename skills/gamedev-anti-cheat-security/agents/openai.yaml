@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Anti-Cheat & Security"
+  short_description: "Server authority, attestation, fraud, bots and ban systems"
+  default_prompt: "$gamedev-anti-cheat-security Our weekly event leaderboard is full of impossible scores and bot accounts; design detection, attestation gating and a ban wave process."

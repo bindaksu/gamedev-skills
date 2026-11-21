@@ -1,0 +1,4 @@
+interface:
+  display_name: "React Native Game Engineer"
+  short_description: "Expo, Skia and worklet games: sim core, perf, release"
+  default_prompt: "$gamedev-react-native-engineer Our Expo strategy game janks while panning the map and gets killed after twenty minutes at top speed; profile it and fix the sim, rendering and release lane."

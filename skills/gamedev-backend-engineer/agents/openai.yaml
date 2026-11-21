@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Backend Engineer"
+  short_description: "Economy ledger, receipts, refunds, leaderboards, mail"
+  default_prompt: "$gamedev-backend-engineer Implement an idempotent purchase verification endpoint for App Store and Google Play that grants gems through our ledger and handles refunds."

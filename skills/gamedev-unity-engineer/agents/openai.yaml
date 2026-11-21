@@ -1,0 +1,4 @@
+interface:
+  display_name: "Unity Engineer"
+  short_description: "Unity 6 client architecture, Addressables, URP, IL2CPP"
+  default_prompt: "$gamedev-unity-engineer Our Unity 6 game hitches every few seconds on mid-range Android and content updates never reach players; audit the project and fix it."

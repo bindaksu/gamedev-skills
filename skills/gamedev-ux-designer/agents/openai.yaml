@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game UX Designer"
+  short_description: "Game flows, IA, FTUE, popup policy, heuristic audits"
+  default_prompt: "$gamedev-ux-designer Audit the first-week flow of my merge game: map the IA, write a friction log, and fix the popups at session start."

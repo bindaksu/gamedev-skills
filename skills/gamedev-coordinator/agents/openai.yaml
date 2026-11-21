@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Dev Coordinator"
+  short_description: "Split game features into owned packages and route specialists"
+  default_prompt: "$gamedev-coordinator Break down adding a guild war mode to our puzzle RPG and tell me which specialists own each piece."

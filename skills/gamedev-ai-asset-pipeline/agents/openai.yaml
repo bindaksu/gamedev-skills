@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Asset Pipeline"
+  short_description: "Generated game art, 3D, audio, video: spend, provenance, rights"
+  default_prompt: "Use $gamedev-ai-asset-pipeline to set up generation of our character sprites and 3D props with a capped spend ledger, provenance manifest, owner review and store AI disclosure."
